@@ -1,9 +1,13 @@
 function find_file_under_cursor ()
   local current_word = vim.fn.expand('<cword>')
   local snaked_word = snake(current_word)
+  local allPaths = vim.fn.systemlist('bundle show --paths')
+  local currentDir = vim.fn.getcwd()
+  table.insert(allPaths, currentDir)
 
   local opts = {
-    search_file = snake(current_word)
+    search_file = snake(current_word),
+    search_dirs = allPaths
   }
   print("snaked word: " .. snaked_word)
   require('telescope.builtin').find_files(opts)
