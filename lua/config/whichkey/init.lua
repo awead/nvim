@@ -17,6 +17,7 @@ wk.add({
     { "<leader>f<leader>", ":Telescope live_grep<cr>", desc = "Grep (live)" },
     { "<leader>fB", ":Telescope current_buffer_fuzzy_find<cr>", desc = "Current open buffer" },
     { "<leader>fF", ":lua find_file_under_cursor()<CR>", desc = "Find files (under cursor)" },
+    { "<leader>fG", ":lua grep_string_under_cursor()<CR>", desc = "Grep all (under cursor)" },
     { "<leader>fb", ":Telescope buffers<cr>", desc = "Buffers" },
     { "<leader>fc", ":Telescope colorscheme<cr>", desc = "Color Schemes" },
     { "<leader>ff", ":Telescope find_files<cr>", desc = "Find files (live)" },
