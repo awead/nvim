@@ -1,13 +1,24 @@
 function find_file_under_cursor ()
+  local currentDir = vim.fn.getcwd()
+  local projectType = get_project_type(currentDir)
   local current_word = vim.fn.expand('<cword>')
   local snaked_word = snake(current_word)
-  local allPaths = vim.fn.systemlist('bundle show --paths')
-  local currentDir = vim.fn.getcwd()
+  local allPaths
+
+  if projectType == "python" then
+    allPaths = vim.fn.systemlist("find .venv -type d -not -name '_*' -depth 4 -not -name '*.dist-info'")
+  elseif projectType == "ruby" then
+    allPaths = vim.fn.systemlist('bundle show --paths')
+  else
+    allPaths = {}
+  end
+
   table.insert(allPaths, currentDir)
 
   local opts = {
     search_file = snake(current_word),
-    search_dirs = allPaths
+    search_dirs = allPaths,
+    no_ignore = true
   }
   print("snaked word: " .. snaked_word)
   require('telescope.builtin').find_files(opts)
