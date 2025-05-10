@@ -99,6 +99,16 @@ return {
     config = build_with_config("autopairs")
   },
 
+  -- Codeium
+  {
+    "Exafunction/codeium.nvim",
+    cond = not vim.g.vscode,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = build_with_config("codeium"),
+  },
+
   -- Pretty stuff...
   {
     "nvim-lualine/lualine.nvim",
