@@ -19,6 +19,8 @@ require('nvim-treesitter.configs').setup {
     "json",
     "javascript",
     -- "lua",
+    "markdown",
+    "markdown_inline",
     -- "query",
     "ruby",    -- disabled in favor of tpope plugins
     -- "rust",

@@ -182,4 +182,16 @@ return {
     build = ":TSUpdate",
     config = build_with_config("treesitter")
   },
+
+  -- Code completion
+  --   Very bare bones, and no cmp-nvim-lsp
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+    },
+    config = build_with_config("nvim-cmp")
+  },
 }
