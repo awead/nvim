@@ -40,6 +40,7 @@ cmp.setup({
   },
   sources = {
     { name = "buffer" },
+    { name = "codecompanion" },
     { name = "path" },
   }
 })

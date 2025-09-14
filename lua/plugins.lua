@@ -194,4 +194,14 @@ return {
     },
     config = build_with_config("nvim-cmp")
   },
+
+  -- LLM/AI
+  {
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = build_with_config("codecompanion")
+  },
 }
