@@ -11,6 +11,12 @@ wk.add({
     { "<leader>w", "<cmd>w<cr>", desc = "Write" },
 
     ---
+    --- CodeCompanion
+    ---
+    { "<leader>c", group = "CodeCompanion" },
+    { "<leader>cc", ":CodeCompanionActions<cr>", desc = "List Actions" },
+
+    ---
     --- Telescope
     ---
     { "<leader>f", group = "Finding with Telescope" },
