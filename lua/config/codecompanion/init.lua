@@ -9,7 +9,6 @@ require("codecompanion").setup({
         return require("codecompanion.adapters").extend("claude_code", {
           env = {
             CLAUDE_CODE_OAUTH_TOKEN = os.getenv("CLAUDE_CODE_OAUTH_TOKEN"),
-            -- ANTHROPIC_API_KEY = os.getenv("NVIM_CC_ANTHROPIC_API_KEY"),
           },
         })
       end
@@ -19,6 +18,19 @@ require("codecompanion").setup({
         return require("codecompanion.adapters").extend("anthropic", {
           env = {
             api_key = os.getenv("NVIM_CC_ANTHROPIC_API_KEY"),
+          },
+        })
+      end,
+      azure_openai = function()
+        return require("codecompanion.adapters").extend("azure_openai", {
+          env = {
+            api_key = os.getenv("NVIM_CC_GPT5_API_KEY"),
+            endpoint = os.getenv("NVIM_CC_OPENAI_ENDPOINT"),
+          },
+          schema = {
+            model = {
+              default = "gpt-5-mini",
+            },
           },
         })
       end,

@@ -31,3 +31,6 @@ map('t', '<Escape>', '<C-Bslash><C-n>', { desc = 'ToggleTerm: Exit insert mode' 
 
 -- Spelling
 map('n', '<leader>s', 'z=', { desc = 'Suggest spelling correction' })
+
+-- CodeCompanion
+map('v', 'ga', '<cmd>CodeCompanionChat Add<CR>', { desc = "Add code to a chat buffer" } )

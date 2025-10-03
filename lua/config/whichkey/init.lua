@@ -14,6 +14,7 @@ wk.add({
     --- CodeCompanion
     ---
     { "<leader>c", group = "CodeCompanion" },
+    { "<leader>c<leader>", ":CodeCompanionChat Toggle<cr>", desc = "Toggle chat window" },
     { "<leader>cc", ":CodeCompanionActions<cr>", desc = "List Actions" },
 
     ---
