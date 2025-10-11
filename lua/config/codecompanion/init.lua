@@ -1,18 +1,5 @@
 require("codecompanion").setup({
   adapters = {
-    -- Configures an acp adapter for use with ClaudePro
-    -- I've seen:
-    --   require("codecompanion.adapters.acp")
-    -- as an alternative.
-    acp = {
-      claude_code_acp = function()
-        return require("codecompanion.adapters").extend("claude_code", {
-          env = {
-            CLAUDE_CODE_OAUTH_TOKEN = os.getenv("CLAUDE_CODE_OAUTH_TOKEN"),
-          },
-        })
-      end
-    },
     http = {
       anthropic = function()
         return require("codecompanion.adapters").extend("anthropic", {
@@ -24,12 +11,12 @@ require("codecompanion").setup({
       azure_openai = function()
         return require("codecompanion.adapters").extend("azure_openai", {
           env = {
-            api_key = os.getenv("NVIM_CC_GPT5_API_KEY"),
-            endpoint = os.getenv("NVIM_CC_OPENAI_ENDPOINT"),
+            api_key = os.getenv("NVIM_CC_AZURE_OPENAPI_KEY"),
+            endpoint = os.getenv("NVIM_CC_AZURE_OPENAPI_ENDPOINT"),
           },
           schema = {
             model = {
-              default = "gpt-5-mini",
+              default = "gpt-5-mini"
             },
           },
         })
@@ -41,7 +28,7 @@ require("codecompanion").setup({
   },
   strategies = {
     chat = {
-      adapter = "anthropic",
+      adapter = "azure_openai",
       keymaps = {
         options = {
           modes = { n = "?" },
@@ -54,7 +41,7 @@ require("codecompanion").setup({
       },
     },
     inline = {
-      adapter = "anthropic",
+      adapter = "azure_openai",
     },
   },
 })
