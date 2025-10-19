@@ -54,15 +54,6 @@ return {
     config = build_with_config("toggleterm"),
   },
 
-  {
-    "folke/tokyonight.nvim",
-    cond = not vim.g.vscode,
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme tokyonight-moon]])
-    end,
-  },
 
   {
     "folke/which-key.nvim",
@@ -97,6 +88,37 @@ return {
   {
     'windwp/nvim-autopairs',
     config = build_with_config("autopairs")
+  },
+
+  -- Color schemes
+  {
+    "folke/tokyonight.nvim",
+    cond = not vim.g.vscode,
+    lazy = false,
+    priority = 1000,
+
+    -- Sets default on startup
+    config = function()
+      vim.cmd([[colorscheme tokyonight-moon]])
+    end,
+  },
+
+  {
+    "rebelot/kanagawa.nvim",
+    cond = not vim.g.vscode,
+  },
+
+  {
+    "catppuccin/nvim",
+    cond = not vim.g.vscode,
+    name = "catppuccin",
+    priority = 1000
+  },
+
+  {
+    "kepano/flexoki-neovim",
+    cond = not vim.g.vscode,
+    name = "flexoki"
   },
 
   -- Pretty stuff...
