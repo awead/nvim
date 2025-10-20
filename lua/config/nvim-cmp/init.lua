@@ -39,7 +39,13 @@ cmp.setup({
     end, {'i', 's'}),
   },
   sources = {
-    { name = "buffer" },
+    {
+      name = "buffer",
+      option = {
+        keyword_pattern = [[\k\+]],
+        keyword_length = 3
+      }
+    },
     { name = "codecompanion" },
     { name = "path" },
   }
