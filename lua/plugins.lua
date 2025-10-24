@@ -95,12 +95,7 @@ return {
     "folke/tokyonight.nvim",
     cond = not vim.g.vscode,
     lazy = false,
-    priority = 1000,
-
-    -- Sets default on startup
-    config = function()
-      vim.cmd([[colorscheme tokyonight-moon]])
-    end,
+    priority = 1000
   },
 
   {
