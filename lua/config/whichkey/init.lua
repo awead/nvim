@@ -7,7 +7,7 @@ wk.add({
     { "<leader>B", "<cmd>bd!<cr>", desc = "Close!" }, -- no need to specify mode since it's inherited
     { "<leader>b", "<cmd>bd<cr>", desc = "Close" },
     { "<leader>Q", "<cmd>wq<cr>", desc = "Save and Quit" },
-    { "<leader>q", "<cmd>q<cr>", desc = "Quit" }, 
+    { "<leader>q", "<cmd>q<cr>", desc = "Quit" },
     { "<leader>w", "<cmd>w<cr>", desc = "Write" },
 
     ---
@@ -70,6 +70,10 @@ wk.add({
     { "<leader>tf", ":ToggleTerm direction=float<cr>", desc = "Switch to floating terminal" },
     { "<leader>tt", ":ToggleTerm<cr>", desc = "Toggle the surrent open terminal" },
 
+    {
+      mode = { "v" },
+      { "<leader>cs", function() require("codecompanion").prompt("Summarize") end, desc = "Summarize" }
+    },
   }
 })
 

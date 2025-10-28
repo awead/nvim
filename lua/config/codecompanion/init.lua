@@ -44,4 +44,27 @@ require("codecompanion").setup({
       adapter = "azure_openai",
     },
   },
+  prompt_library = {
+    ["Summarize"] = {
+      strategy = "inline",
+      description = "Summarize the selected text",
+      opts = {
+        short_name = "summarize",
+      },
+      context = {
+        {
+          type = "selection",
+        },
+      },
+      prompts = {
+        {
+          role = "user",
+          content = "Summarize the selected text into concise bullet points using markdown formatting. \
+                     Do not usbold, italic, or any other formatting.\
+                     Do not capitalize the first word of the bullet point unless it's an ancronym or proper noun. \
+                     Do not use periods at the ends of bullet points.",
+        },
+      },
+    },
+  },
 })
