@@ -44,4 +44,30 @@ require("codecompanion").setup({
       adapter = "azure_openai",
     },
   },
+  prompt_library = {
+    ["Summarize"] = {
+      strategy = "inline",
+      description = "Summarize the selected text",
+      opts = {
+        short_name = "summarize",
+      },
+      context = {
+        {
+          type = "selection",
+        },
+      },
+      prompts = {
+        {
+          role = "user",
+          content = "Summarize the selected text into concise bullet points using markdown formatting.\
+                     You can use nested bullet lists when appropriate.\
+                     First-level bullet points should begin with an asterix (*).\
+                     Sub-bullet lists, or second-level bullet points should be indented by 4 spaces and begin with a dash (-).\
+                     Do not use bold, italic, or any other formatting.\
+                     Do not capitalize the first word of the bullet point unless it's an ancronym or proper noun.\
+                     Do not use periods at the ends of bullet points.",
+        },
+      },
+    },
+  },
 })
