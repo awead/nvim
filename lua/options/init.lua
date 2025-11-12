@@ -1,5 +1,8 @@
 vim.cmd('filetype plugin indent on')
-vim.cmd([[colorscheme kanagawa-wave]])
+
+if not vim.g.vscode then
+  vim.cmd([[colorscheme kanagawa-wave]])
+end
 
 vim.bo.autoindent = true
 vim.bo.expandtab = true
