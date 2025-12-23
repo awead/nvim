@@ -72,7 +72,7 @@ wk.add({
 
     {
       mode = { "v" },
-      { "<leader>cs", function() require("codecompanion").prompt("Summarize") end, desc = "Summarize" }
+      { "<leader>cs", function() require("codecompanion").prompt("summarize") end, desc = "Summarize the selected text into bullet points" }
     },
   }
 })
