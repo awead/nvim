@@ -1,7 +1,7 @@
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.config').setup {
   auto_install = true,
 
-  -- Autopairing is wierd... could be conflicts with tpope/endwise
+  -- Autopairing is weird... could be conflicts with tpope/endwise
   autopairs = { enable = true },
 
   ensure_installed = {
@@ -31,7 +31,7 @@ require('nvim-treesitter.configs').setup {
     -- "vim",
   },
 
-  -- setting to false will disable the whole extensios
+  -- setting to false will disable the whole extension
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
