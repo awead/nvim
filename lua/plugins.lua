@@ -193,9 +193,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     cond = not vim.g.vscode,
-    dependencies = {
-      "RRethy/nvim-treesitter-endwise",
-    },
+    lazy = false,
     build = ":TSUpdate",
     config = build_with_config("treesitter")
   },
